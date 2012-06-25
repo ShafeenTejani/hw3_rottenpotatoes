@@ -27,3 +27,11 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
     uncheck ? uncheck(checkbox) : check(checkbox)
   end
 end
+
+Then /I should see all of the movies/ do
+    assert page.has_css?("table#movies tbody tr", count: 10)
+end
+
+Then /I should see no movies/ do
+    assert page.has_no_css?("table#movies tbody tr")
+end
