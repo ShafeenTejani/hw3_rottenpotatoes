@@ -1,0 +1,4 @@
+%h2 Similar movies with #{@movie.title}
+%ul
+  - for movie in @movies
+    %li= link_to movie.title, movie_path(movie)
